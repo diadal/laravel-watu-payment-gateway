@@ -2,8 +2,14 @@
  fast payment gateway in Nigeria
 
 
-[![Latest Version](https://img.shields.io/github/release/diadal/laravel-watu-payment-gateway)](https://github.com/diadal/laravel-watu-payment-gateway/releases)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/diadal/laravel-watu-payment-gateway/run-tests?label=tests)
+<p align="center">
+<a href="https://travis-ci.org/diadal/laravel-watu-payment-gateway"><img src="https://travis-ci.org/diadal/laravel-watu-payment-gateway.svg?branch=master" alt="Build Status"></a>
+<a href="https://packagist.org/packages/diadal/laravel-watu-payment-gateway"><img src="https://poser.pugx.org/diadal/laravel-watu-payment-gateway/d/total.svg" alt="Total Downloads"></a>
+<!-- <a href="https://packagist.org/packages/diadal/laravel-watu-payment-gateway"><img src="https://poser.pugx.org/diadal/laravel-watu-payment-gateway/v/stable.svg" alt="Latest Stable Version"></a> -->
+<a href="https://packagist.org/packages/diadal/laravel-watu-payment-gateway"><img src="https://poser.pugx.org/diadal/laravel-watu-payment-gateway/license.svg" alt="License"></a>
+</p>
+
+
 
 
 This package provides a simple way to work with Watu Api. To learn all about it, head over to [Watu documentation](https://docs.watu.global/).
