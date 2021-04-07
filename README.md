@@ -3,7 +3,7 @@
 
 
 <p align="center">
-<a href="https://travis-ci.com/diadal/laravel-watu-payment-gateway"><img src="https://travis-ci.com/diadal/laravel-watu-payment-gateway.svg?branch=master" alt="Build Status"></a>
+<!-- <a href="https://travis-ci.com/diadal/laravel-watu-payment-gateway"><img src="https://travis-ci.com/diadal/laravel-watu-payment-gateway.svg?branch=master" alt="Build Status"></a> -->
 <a href="https://packagist.org/packages/diadal/laravel-watu-payment-gateway"><img src="https://poser.pugx.org/diadal/laravel-watu-payment-gateway/d/total.svg" alt="Total Downloads"></a>
 <!-- <a href="https://packagist.org/packages/diadal/laravel-watu-payment-gateway"><img src="https://poser.pugx.org/diadal/laravel-watu-payment-gateway/v/stable.svg" alt="Latest Stable Version"></a> -->
 <a href="https://packagist.org/packages/diadal/laravel-watu-payment-gateway"><img src="https://poser.pugx.org/diadal/laravel-watu-payment-gateway/license.svg" alt="License"></a>
