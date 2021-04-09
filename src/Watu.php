@@ -43,7 +43,7 @@ class Watu
     /**
      * Undocumented function
      *
-     * @param [type] $data
+     * @param array $data
      * @return Object
      */
     public function GetBankList($data)
@@ -60,7 +60,7 @@ class Watu
     /**
      * Undocumented function
      *
-     * @param [type] $data
+     * @param array $data
      * @return void
      */
     public function Charge($data)
@@ -82,7 +82,7 @@ class Watu
     /**
      * Undocumented function
      *
-     * @param [type] $data
+     * @param array $data
      * @return void
      */
     public function PaymentInitiate($data)
@@ -99,7 +99,7 @@ class Watu
     /**
      * Undocumented function
      *
-     * @param [type] $data
+     * @param array $data
      * @return void
      */
     public function GetFee($data)
@@ -116,19 +116,21 @@ class Watu
     /**
      * Undocumented function
      *
-     * @param [type] $data
+     * @param array $data
      * @return void
      */
     public function OtherMethods($data)
     {
-        $keyType0 = $data['keyType'];
-        $keyType = $this->$keyType0;
-        $rtype = $data['requestType'];
+        $keyType0 = $data['keyType'] ?? null;
+        $keyType = $this->$keyType0  ?? null;
+        $rtype = $data['requestType']  ?? null;
         $path = $data['path'];
-        $mainData = $data['mainData'];
+        $mainData = $data['mainData']  ?? null;
+        $otherheader = $data['header']  ?? null;
         $tranx = Http::withHeaders([
             'Authorization' => 'Bearer ' . $keyType,
             'Content-Type' => 'application/json',
+            $otherheader
         ])->$rtype($this->url . $path, $mainData);
         $collection = $tranx->json();
         return $collection;
