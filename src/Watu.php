@@ -127,8 +127,9 @@ class Watu
         $path = $data['path'];
         $mainData = $data['mainData']  ?? null;
         $otherheader = $data['header']  ?? null;
+        $beaRer = $data['beaRer']  ?? null;
         $tranx = Http::withHeaders([
-            'Authorization' => 'Bearer ' . $keyType,
+            'Authorization' => $beaRer ?? 'Bearer ' . $keyType,
             'Content-Type' => 'application/json',
             $otherheader
         ])->$rtype($this->url . $path, $mainData);
