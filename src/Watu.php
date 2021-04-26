@@ -29,16 +29,19 @@ class Watu
      * Undocumented function
      *
      * @param [string] $data
+     * @param object $cry
      * @return string
      */
-    private function Encrypt($data)
+    private function Encrypt($data, $cry = [])
     {
         $method = "AES-256-CBC";
-        $key = $this->encryptKey;
-        $iv = $this->ivKey;
+        $key = $cry['encryption'] ?? $this->encryptKey;
+        $iv = $cry['iv'] ??  $this->ivKey;
         $ciphertext = openssl_encrypt($data, $method, $key, 0, $iv);
         return $ciphertext;
     }
+
+
 
     /**
      * Undocumented function
@@ -60,17 +63,18 @@ class Watu
     /**
      * Undocumented function
      *
-     * @param array $data
+     * @param object $data
+     * @param array $cry
+     * @param string $has
      * @return void
      */
-    public function Charge($data)
+    public function Charge($data, $cry = [], $has = '')
     {
-
-        $encdata = $this->Encrypt(json_encode($data));
+        $encdata = $this->Encrypt(json_encode($data), $cry);
         if ($encdata) {
-            $postData = ['payload' => $encdata];
+            $postData = $has ? ['payload' => $encdata, 'alg' => $has] : ['payload' => $encdata];
             $tranx = Http::withHeaders([
-                'Authorization' => 'Bearer ' . $this->publicKey,
+                'Authorization' =>  'Bearer ' . ($cry['public_key'] ?? $this->publicKey),
                 'Content-Type' => 'application/json',
             ])->post($this->url . '/payment/charge', $postData);
             $collection = $tranx->json();
@@ -117,6 +121,7 @@ class Watu
      * Undocumented function
      *
      * @param array $data
+     * @param object $cry
      * @return void
      */
     public function OtherMethods($data)
